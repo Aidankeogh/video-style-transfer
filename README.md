@@ -18,9 +18,10 @@ Numpy - https://pypi.org/project/numpy/
 PIL - https://pypi.org/project/PIL/
 Scipy - https://pypi.org/project/scipy/
 
-To get started, open up artistic_style_transfer.ipynb and edit videoDir to be the name of the .mp4 video you want to edit, with the '.mp4' removed. If you want to test it on our iguana video, leave it unchanged. 
+To use a new video, open setup.ipynb, and follow the instructions editing the video directory to the video you want to use. This requires SPyNet to work to create optical flow files between images, which can be difficult to get working, so I have included a pre-processed video in test-videos/iguana_pan for conveience.
 
-If you wish to use a new video, you should uncomment 'import frames_extractor" and the line below, but note that it was difficult to get spynet (for optical flow) working, and there may be some debugging steps needed. We have included a pre-processed video folder ("iguana_pan") for your convenience. 
+To get started on style transfer, open up artistic_style_transfer.ipynb and edit videoDir to be the name of the directory created in setup.ipynb. If you want to test it on our iguana video, leave it unchanged. 
+
 
 From there, rename the "style_img" to the path to the style image you want to use. For convenience we have included a few style images in the style folder. 
 

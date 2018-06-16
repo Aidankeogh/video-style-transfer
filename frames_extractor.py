@@ -54,7 +54,19 @@ def vid_to_imgs(inFile, vFPS, get_flow = False):
     
     # remove resized video file
     os.remove(newVid)
-
+    
+    ### GETS .FLO FILES FOR THE OPTICAL FLOW BETWEEN ALL IMAGES USING SPYNET
+    # Spynet can be finicky, view https://github.com/sniklaus/pytorch-spynet
+    # and https://github.com/anuragranj/spynet for help setting up if our 
+    # code does not work by default. 
+    #
+    # If this cannot be done, we have included a pre-processed image in the repo
+    # under test_videos/iguana_pan. For assistance contact Aidan at 415-312-1819
+    #
+    # May take several minutes to run, especially for large videos. Remember that
+    # a 5 minute long video at 20 fps will have 6000 frames. At 2 seconds per .flo 
+    # file, that is 3 hours and 20 minutes. 
+    
     if(get_flow):
         imagenames = sorted(glob.glob(outDir+"/*.png"))
         for i in range(len(imagenames)-1):
@@ -78,8 +90,8 @@ def imgs_to_vid(imgsDir, outFile, vFPS,prefix="frame"):
     inImg = prefix + '%04d.jpg'
     
     # create output file
-    if os.path.isfile(outVid):
-        os.remove(outVid)
+    if os.path.isfile(outFile):
+        os.remove(outFile)
         
     stream = ffmpeg.input(os.path.join(imgsDir, inImg))
     stream = ffmpeg.filter_(stream, 'fps', fps=vFPS, round='up')

@@ -1,3 +1,11 @@
+#################################################
+# ALL CODE IS ADAPTED FROM NEURAL STYLE TRANSFER
+# PYTORCH TUTORIAL FOUND HERE: 
+# https://pytorch.org/tutorials/advanced/neural_style_tutorial.html
+# ANY CHANGES ARE EITHER FOR TESTING PURPOSES OR TO 
+# MAKE IT COMPATIBLE WITH OUR INITIALIZATION FUNCTIONS
+#################################################
+
 
 # coding: utf-8
 
